@@ -4,12 +4,13 @@ from langchain_pinecone import PineconeVectorStore
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pinecone import Pinecone, ServerlessSpec
 from langchain_core.documents import Document
+from tqdm import tqdm
 
 from .config import OPENAI_API_KEY, PINECONE_API_KEY, PINECONE_INDEX_NAME
 
 # One chunk config to start with
 from .config import (
-    CHUNK_SIZE, CHUNK_OVERLAP, NAMESPACE
+    CHUNK_SIZE, CHUNK_OVERLAP, NAMESPACE, EMBED_BATCH_SIZE, PINECONE_BATCH_SIZE
 )
 
 def build_docs_from_csv(csv_path: str):
@@ -70,15 +71,19 @@ def main():
     embeddings = OpenAIEmbeddings(
         api_key=OPENAI_API_KEY,
         base_url="https://api.llmod.ai/v1",
-        model="4UHRUIN-text-embedding-3-small"
+        model="4UHRUIN-text-embedding-3-small",
+        chunk_size=EMBED_BATCH_SIZE,
     )
 
-    PineconeVectorStore.from_documents(
-        chunks,
-        embedding=embeddings,
+    vectorstore = PineconeVectorStore(
         index_name=PINECONE_INDEX_NAME,
+        embedding=embeddings,
         namespace=NAMESPACE,
     )
+
+    for i in tqdm(range(0, len(chunks), PINECONE_BATCH_SIZE), desc="Upserting"):
+        batch = chunks[i: i + PINECONE_BATCH_SIZE]
+        vectorstore.add_documents(batch)
 
     print(f"Done. Namespace={NAMESPACE}")
 
