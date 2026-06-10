@@ -7,19 +7,13 @@ from pydantic import BaseModel, Field
 from medium_rag.rag_chain import answer_query, SYSTEM_PROMPT
 
 # --------- CONFIG: keep in sync with the RAG tuning ---------
-# These are my CURRENT RAG hyperparameters:
-CHUNK_SIZE = 512          # tokens (as in ingest.py)
-OVERLAP_TOKENS = 102      # tokens
-TOP_K_DEFAULT = 3         # between 1 and 30
-NAMESPACE = f"tok{CHUNK_SIZE}_ov{OVERLAP_TOKENS}"
-
-# overlap_ratio required by /api/stats:
-OVERLAP_RATIO = OVERLAP_TOKENS / CHUNK_SIZE
-
+from medium_rag.config import (
+    CHUNK_SIZE, TOP_K,
+    OVERLAP_RATIO, NAMESPACE
+)
 # -------------------------------------------------------------
 
 app = FastAPI()
-
 
 # ---------- Pydantic models for request/response ----------
 
@@ -92,7 +86,7 @@ async def prompt(request: PromptRequest):
 
     # Using our existing RAG chain:
     answer, docs_and_scores = await asyncio.get_event_loop().run_in_executor(
-        None, partial(answer_query, question, namespace=NAMESPACE, top_k=TOP_K_DEFAULT, return_scores=True)
+        None, partial(answer_query, question, namespace=NAMESPACE, top_k=TOP_K, return_scores=True)
     )
 
     docs = [ds[0] for ds in docs_and_scores]
@@ -136,7 +130,7 @@ async def stats():
     return StatsResponse(
         chunk_size=CHUNK_SIZE,
         overlap_ratio=OVERLAP_RATIO,
-        top_k=TOP_K_DEFAULT,
+        top_k=TOP_K,
     )
 
 @app.get("/health")

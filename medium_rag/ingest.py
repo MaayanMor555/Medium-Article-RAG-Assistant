@@ -8,9 +8,9 @@ from langchain_core.documents import Document
 from .config import OPENAI_API_KEY, PINECONE_API_KEY, PINECONE_INDEX_NAME
 
 # One chunk config to start with
-CHUNK_SIZE = 512  # characters
-CHUNK_OVERLAP = int(CHUNK_SIZE * 0.2)
-NAMESPACE = f"chunk_size_tokens{CHUNK_SIZE}_overlap{CHUNK_OVERLAP}"
+from .config import (
+    CHUNK_SIZE, CHUNK_OVERLAP, NAMESPACE
+)
 
 def build_docs_from_csv(csv_path: str):
     df = pd.read_csv(csv_path)
