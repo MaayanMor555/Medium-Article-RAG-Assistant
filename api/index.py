@@ -142,3 +142,11 @@ async def stats():
 @app.get("/health")
 async def health():
     return {"status": "ok"}
+
+@app.get("/")
+async def root():
+    return {
+        "message": "Medium Article RAG Assistant API is running",
+        "docs": "/docs",
+        "endpoints": ["/api/prompt", "/api/stats"]
+    }
