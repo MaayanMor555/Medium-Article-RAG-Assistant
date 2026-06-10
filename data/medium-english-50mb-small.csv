@@ -1,0 +1,1128 @@
+title,text,url,authors,timestamp,tags
+How to get your product noticed,"How to get your product noticed
+
+Offer value in exchange for your customers’ attention
+
+Photo by Riccardo Annandale on Unsplash
+
+Recently I launched a new business. It’s based around a little software plugin that I made. I spent lots of time testing it, perfecting the code and packaging it up in a nice looking website with great documentation and plenty of examples. The initial product development was done. All that was left to do is sell.
+
+But how do I drive people to my website? I could post on Twitter, Facebook and other social networks, with links back to my site, but what sort of content will build engagement and interest? Then I had a realisation which answers this question. And it’s not limited to the internet and online sales — it applies to any product sold in any way.
+
+To get your customers’ attention you need to give them value in addition to the value they will get from the product itself. In other words, you need to give them value in exchange for their attention.
+
+I’ll explain what I mean, but first a brief story about lunch.
+
+What’s lunch got to do with it?
+
+Yesterday I went to lunch with the CEO of a technology vendor. She has been trying to sell her company’s product to me and my employer for some time. This is the fourth lunch we’ve had over the last two years and at no stage has it appeared that I’m close to making a purchase. It’s not that the product lacks interest or potential value to my organisation, it’s that my organisation is not ready, internally, to adopt the new way of working that would be required to use the product.
+
+So why do the CEO and I continue to meet for lunch every few months? For the CEO, in part she sees the possibility of a sale, even though it is uncertain and still some time away. But that’s not all. She is very well connected in the industry and is able to provide real value by connecting people and identifying trends. This is value that she provides to me when we meet and, I imagine, to others when she meets with them. And it’s only possible because she cultivates and maintains broad connections, including with me.
+
+This is why I am willing to spend time with her every few months — I get real value from the meetings. I give her my time and attention, she gives me value in the form of connections and industry observations. And I am more likely to buy her company’s product than if we didn’t meet. The meetings ensure that I don’t forget about her company, and that I consider its product if and when the time is right.
+
+What about other types of products, like those not sold by sales people?
+
+The principal of “value in exchange for attention” applies to other types of products as well, even those not sold by sales people.
+
+Consider a loaf of bread you buy in the supermarket. Does the baker of the bread give value in exchange for your attention? They do. It takes the form of convenience, which the baker buys from the supermarket and gives to you.
+
+Supermarkets sell lots of products but the main value they provide is convenience. They aggregate products and bring them physically close to consumers, creating shops where space is valuable and scarce. Manufacturers and wholesalers compete for that space by paying to get their product on the supermarket’s shelves. Sometimes they pay money, sometimes they sell their product at discounted rates. Either way, they pay.
+
+Ultimately they are buying a little piece of the “convenience pie” owned by the supermarket. The baker gives you value in the form of convenience delivered to you via the supermarket, you give the baker your attention when you’re in the supermarket perusing the bread isle.",https://medium.com/hackernoon/how-to-get-your-product-noticed-b7ff6d1c7dd6,['Elliot Leibu'],2019-06-08 12:00:03.916000+00:00,"['Sales', 'Marketing', 'Production Adoption', 'Online', 'Entrepreneurship']"
+Are you a Panster or a Plotter,"Are you a Panster or a Plotter
+
+Pros and cons of both
+
+Photo by Dan Dimmock on Unsplash
+
+To plot or not to plot is the question. But the answer is not the same for everyone.
+
+Plotter
+
+A plotter writes down every detail of every chapter from beginning to end. They know how the story will start, what each character will do and how the story will end. Their outline is specific, and there is no deviating from it.
+
+Pros — This always leads to a more organized writing experience as the you, the writer, already know what is going to happen. It allows you to sit down and type that 80,000 word novel in no time, getting you to the editing part quicker which, in turn, gets you to the publishing phase in no time.
+
+Cons — Plotting leaves no room for deviation. Meaning that if you want to kill a character off mid-way through and it is not in the outline, your whole system gets messed up. Say you want to change a particular aspect of an incident, you can’t change it without having to redo the remaining outline.
+
+Pantser
+
+A panster literally flies by the seat of their pants when writing. They have no idea how it will begin, how it will end and nothing in between. There is no outline to follow, no path already chosen. Just the writer, a keyboard and a blank screen awaiting the arrival of the next best-seller. You want to kill your character off? Go ahead, there are no rules.
+
+Pros — A literal free for all going on. There is no telling what your fingers will type on the screen. The anticipation might even be the highlight of your day. You, the writer, have the possibility to surprise yourself with the events in the story.
+
+Cons — Two words, writer’s block, these two words can wreak havoc on your ability to finish the story. Without a path to follow you are pretty much winging it and that can cause writer’s block in the middle of the story. Stuck on a chapter? Well you can’t move forward because you don’t know what will happen next until you write this one.
+
+Are these the only two options?
+
+Absolutely not! Imagine a line, on one end is the word Plotter and the other end says Pantser. In the middle is wide array of levels to the writing process. Some would say that somewhere in the middle is good, an equal balance.
+
+But really it is up to you, the writer, as to where you sit on that line. I am closer to a panster, outlines bore me and seem tedious. But I do create lists for each of my characters. A bio for each one saved in a folder on my computer.
+
+I also tend to know the ending, the conflict and the why the conflict is happening. But I don’t write the end first, although it is something we can do as writers. Knowing the end could help write the beginning and all that stuff in the middle.
+
+In the end, it doesn’t matter whether you are a Plotter or a Pantser. What does matter is that you do what feels comfortable to you. Want to write a six page outline, go ahead! Want to sit in front of your computer waiting for the words to make it to the screen, go ahead!
+
+You do you!",https://medium.com/the-writers-bookcase/are-you-a-panster-or-a-plotter-b7b8e53f14a2,['Tammi Brownlee'],2019-11-06 14:48:50.076000+00:00,"['Novel', 'Advice', 'Writing', 'Writing Tips', 'Storytelling']"
+JavaScript essentials: why you should know how the engine works,"This article is also available in Spanish.
+
+In this article, I want to explain what a software developer, who uses JavaScript to write applications, should know about engines so that the written code executes properly.
+
+You’ll see below a one-liner function that returns the property lastName of the passed argument. Just by adding a single property to each object, we end up with a performance drop of more than 700%!
+
+As I will explain in detail, JavaScript’s lack of static types drives this behaviour. Once seen as an advantage over other languages like C# or Java, it turns out to be more of a “Faustian bargain”.
+
+Braking at Full Speed
+
+Usually, we don’t need to know the internals of an engine which runs our code. The browser vendors invest heavily in making the engines run code very fast.
+
+Great!
+
+Let the others do the heavy lifting. Why bother worrying about how the engines work?
+
+In our code example below, we have five objects that store the first and last names of Star Wars characters. The function getName returns the value of lastname. We measure the total time this function takes to run 1 billion times:
+
+(() => {
+
+const han = {firstname: ""Han"", lastname: ""Solo""};
+
+const luke = {firstname: ""Luke"", lastname: ""Skywalker""};
+
+const leia = {firstname: ""Leia"", lastname: ""Organa""};
+
+const obi = {firstname: ""Obi"", lastname: ""Wan""};
+
+const yoda = {firstname: """", lastname: ""Yoda""};
+
+const people = [
+
+han, luke, leia, obi,
+
+yoda, luke, leia, obi
+
+];
+
+const getName = (person) => person.lastname; console.time(""engine"");
+
+for(var i = 0; i < 1000 * 1000 * 1000; i++) {
+
+getName(people[i & 7]);
+
+}
+
+console.timeEnd(""engine"");
+
+})();
+
+On an Intel i7 4510U, the execution time is about 1.2 seconds. So far so good. We now add another property to each object and execute it again.
+
+(() => {
+
+const han = {
+
+firstname: ""Han"", lastname: ""Solo"",
+
+spacecraft: ""Falcon""};
+
+const luke = {
+
+firstname: ""Luke"", lastname: ""Skywalker"",
+
+job: ""Jedi""};
+
+const leia = {
+
+firstname: ""Leia"", lastname: ""Organa"",
+
+gender: ""female""};
+
+const obi = {
+
+firstname: ""Obi"", lastname: ""Wan"",
+
+retired: true};
+
+const yoda = {lastname: ""Yoda""}; const people = [
+
+han, luke, leia, obi,
+
+yoda, luke, leia, obi]; const getName = (person) => person.lastname; console.time(""engine"");
+
+for(var i = 0; i < 1000 * 1000 * 1000; i++) {
+
+getName(people[i & 7]);
+
+}
+
+console.timeEnd(""engine"");
+
+})();
+
+Our execution time is now 8.5 seconds, which is about a factor of 7 slower than our first version. This feels like hitting the brakes at full speed. How could that happen?
+
+Time to take a closer look at the engine.
+
+Combined Forces: Interpreter and Compiler
+
+The engine is the part that reads and executes source code. Each major browser vendor has its own engine. Mozilla Firefox has Spidermonkey, Microsoft Edge has Chakra/ChakraCore and Apple Safari names its engine JavaScriptCore. Google Chrome uses V8, which is also the engine of Node.js.
+
+The release of V8 in 2008 marked a pivotal moment in the history of engines. V8 replaced the browser’s relatively slow interpretation of JavaScript.
+
+The reason behind this massive improvement lies mainly in the combination of interpreter and compiler. Today, all four engines use this technique.
+
+The interpreter executes source code almost immediately. The compiler generates machine code which the user’s system executes directly.
+
+As the compiler works on the machine code generation, it applies optimisations. Both compilation and optimisation result in faster code execution despite the extra time needed in the compile phase.
+
+The main idea behind modern engines is to combine the best of both worlds:
+
+Fast application startup of the interpreter.
+
+Fast execution of the compiler.
+
+A Modern Engine uses an Interpreter and a Compiler. Source: imgflip
+
+Achieving both goals starts off with the interpreter. In parallel, the engine flags frequently executed code parts as a “Hot Path” and passes them to the compiler along with contextual information gathered during execution. This process lets the compiler adapt and optimise the code for the current context.
+
+We call the compiler’s behaviour “Just in Time” or simply JIT.
+
+When the engine runs well, you can imagine certain scenarios where JavaScript even outperforms C++. No wonder that most of the engine’s work goes into that “contextual optimisation”.
+
+Interplay between Interpreter and Compiler
+
+Static Types during Runtime: Inline Caching
+
+Inline Caching, or IC, is a major optimisation technique within JavaScript engines. The interpreter must perform a search before it can access an object’s property. That property can be part of an object’s prototype, have a getter method or even be accessible via a proxy. Searching for the property is quite expensive in terms of execution speed.
+
+The engine assigns each object to a “type” that it generates during the runtime. V8 calls these “types”, which are not part of the ECMAScript standard, hidden classes or object shapes. For two objects to share the same object shape, both objects must have exactly the same properties in the same order. So an object {firstname: ""Han"", lastname: ""Solo""} would be assigned to a different class than {lastname: ""Solo"", firstname: ""Han""} .
+
+With the help of the object shapes, the engine knows the memory location of each property. The engine hard-codes those locations into the function that accesses the property.
+
+What Inline Caching does is eliminate lookup operations. No wonder this produces a huge performance improvement.
+
+Coming back to our earlier example: All of the objects in the first run only had two properties, firstname and lastname , in the same order. Let’s say the internal name of this object shape is p1 . When the compiler applies IC, it presumes that the function only get passed the object shape p1 and returns the value of lastname immediately.
+
+Inline Caching in Action (Monomorphic)
+
+In the second run, however, we dealt with 5 different object shapes. Each object had an additional property and yoda was missing firstname entirely. What happens once we are dealing with multiple object shapes?
+
+Intervening Ducks or Multiple Types
+
+Functional programming has the well-known concept of “duck typing” where good code quality calls for functions that can handle multiple types. In our case, as long as the passed object has a property lastname, everything is fine.
+
+Inline Caching eliminates the expensive lookup for a property’s memory location. It works best when, at each property access, the object has the same object shape. This is called monomorphic IC.
+
+If we have up to four different object shapes, we are in a polymorphic IC state. Like in monomorphic, the optimised machine code “knows” already all four locations. But it has to check to which one of the four possible object shapes the passed argument belongs. This results in a performance decrease.
+
+Once we exceed the threshold of four, it gets dramatically worse. We are now in a so-called megamorphic IC. In this state, there is no local caching of the memory locations anymore. Instead, it has to be looked up from a global cache. This results in the extreme performance drop we have seen above.
+
+Polymorphic and Megamorphic in Action
+
+Below we see a polymorphic Inline Cache with 2 different object shapes.
+
+Polymorphic Inline Cache
+
+And the megamorphic IC from our code example with 5 different object shapes:
+
+Megamorphic Inline Cache
+
+JavaScript Class to the rescue
+
+OK, so we had 5 object shapes and ran into a megamorphic IC. How can we fix this?
+
+We have to make sure that the engine marks all 5 of our objects as the same object shape. That means the objects we create must contain all possible properties. We could use object literals, but I find JavaScript classes the better solution.
+
+For properties that are not defined, we simply pass null or leave it out. The constructor makes sure that these fields are initialised with a value:
+
+(() => {
+
+class Person {
+
+constructor({
+
+firstname = '',
+
+lastname = '',
+
+spaceship = '',
+
+job = '',
+
+gender = '',
+
+retired = false
+
+} = {}) {
+
+Object.assign(this, {
+
+firstname,
+
+lastname,
+
+spaceship,
+
+job,
+
+gender,
+
+retired
+
+});
+
+}
+
+} const han = new Person({
+
+firstname: 'Han',
+
+lastname: 'Solo',
+
+spaceship: 'Falcon'
+
+});
+
+const luke = new Person({
+
+firstname: 'Luke',
+
+lastname: 'Skywalker',
+
+job: 'Jedi'
+
+});
+
+const leia = new Person({
+
+firstname: 'Leia',
+
+lastname: 'Organa',
+
+gender: 'female'
+
+});
+
+const obi = new Person({
+
+firstname: 'Obi',
+
+lastname: 'Wan',
+
+retired: true
+
+});
+
+const yoda = new Person({ lastname: 'Yoda' });
+
+const people = [
+
+han,
+
+luke,
+
+leia,
+
+obi,
+
+yoda,
+
+luke,
+
+leia,
+
+obi
+
+];
+
+const getName = person => person.lastname;
+
+console.time('engine');
+
+for (var i = 0; i < 1000 * 1000 * 1000; i++) {
+
+getName(people[i & 7]);
+
+}
+
+console.timeEnd('engine');
+
+})();
+
+When we execute this function again, we see that our execution time returns to 1.2 seconds. Job done!
+
+Summary
+
+Modern JavaScript engines combine the benefits of interpreter and compiler: Fast application startup and fast code execution.
+
+Inline Caching is a powerful optimisation technique. It works best when only a single object shape passes to the optimised function.
+
+My drastic example showed the effects of Inline Caching’s different types and the performance penalties of megamorphic caches.
+
+Using JavaScript classes is good practice. Static typed transpilers, like TypeScript, make monomorphic IC’s more likely.
+
+Further Reading",https://medium.com/free-code-camp/javascript-essentials-why-you-should-know-how-the-engine-works-c2cc0d321553,['Rainer Hahnekamp'],2018-09-18 16:54:53.871000+00:00,"['Technology', 'Startup', 'Education', 'Programming', 'Web Development']"
+Implementing The Strategy Pattern Using Lazy-Loaded Components in Angular Version 9,"Implementing The Strategy Pattern Using Lazy-Loaded Components in Angular Version 9
+
+Simply stated, the Strategy Pattern is a behavioral pattern that governs the selection of different algorithms or procedures for solving a common problem at runtime. Many times, this pattern is implemented by loading a computational library that conforms to an Interface and is applied uniformly by one or more application components.
+
+In front-end applications, a strategy may involve more than just an algorithm or library API. There is often need to load one of several different implementations of an entire view based on runtime criteria. In an Angular setting, we may think of this as needed to lazy-load a Module, but it is even more helpful if we can load individual components, outside any Module definition. Enter Angular Version 9.
+
+In the article below, I covered dynamic component generation inside lazy-loaded routes, with the ability to control component display via JSON data,
+
+Three components were dynamically generated inside a lazy-loaded route and displayed in an order dictated by a data file. However, since components prior to Angular Version 9 were required to exist in a Module definition, each component was defined in the entryComponents section of the route’s Module. Each component was loaded into the application when the route was lazy-loaded, even if the component was not actually required.
+
+Angular Version 9 provides the ability to lazy-load individual components that are outside the scope of any Module. This allows for a very powerful implementation of the Strategy Pattern.
+
+The Application
+
+The sample application for this article is a mashup of multiple requirements from past applications across Flash, Flex, and Angular. The application illustrates two different solutions to the point-in-circle problem, i.e. identify the circles in a collection for which a single point is in the strict interior.
+
+Now, if it was just a matter of selecting an algorithm to solve the problem and then display the results in a single view, the strategy could be implemented with a lazy-loaded JavaScript library (a topic for another article). In this demo, the results are viewed differently, not only in terms of layout, but with different render environments. Each view renders a simulation in which the point moves inside the view area and the simulation updates the point/circle intersections. However, one algorithm is rendered into a Canvas context and the other into SVG. The Canvas and SVG displays also differ based on algorithm characteristics.
+
+Because of the differing views and dramatically different dependencies between views, this problem is best solved by lazy-loading an individual component (and its dependencies).
+
+Before deconstructing the application, I wish to point out that is is not an article on ‘how to’ lazy-load Components in Angular Version 9. A Google search will return about half a dozen good articles on the steps involved in this process. Instead, this article discusses how to build a complete application around the technique.
+
+And, on that note, here is the GitHub for the complete application.
+
+Algorithms and Geometry
+
+Well, let’s get this out of the way early. This is an Angular article, not a math/algorithms article. As a consequence, the two algorithms I chose for the demonstration are rather rudimentary and easy to follow. As far as the necessary math, here is everything we need.
+
+Blah, blah … math … blah, blah … geometry … blah blah … API.
+
+There, we’re finished :). Everything you need is encapsulated away into Typescript libraries in the /src/app/shared/libs folder. I even gave you a bonus — a number of pure functions for operations involving circles from my private Typescript Math Toolkit library.
+
+The two algorithms implemented in this demo were chosen to illustrate techniques you may find helpful in future applications. In one case, there could be an arbitrary (and large) number of circles, but the circles do not move (only the point moves). In the second case, there are a modest number of circles (hundreds) and a small percentage of them are expected to move each simulation step along with the point.
+
+Both the point and circles move according to a random walk. Don’t worry — remember the power of the API — it’s all done for you :)
+
+The first algorithm (simulation rendered into a Canvas) uses a simple quad map. The viewable area is divided into quadrants. The Typescript Math Toolkit basic circle class automatically computes quadrant locations given bounds, so a quad map is very easy to implement. Since the circles never move, the map need only be initialized once before the simulation begins.
+
+The second algorithm (simulation rendered into SVG) is designed for a situation where there are a modest number of circles (hundreds), and a small percentage of them move at each time step. All circles are tested for point intersection, but the test is optimized to return false quickly. It is more expensive to test for full intersection, so instead of testing ‘if something is true, then do the following operation,’ it is more efficient to test ‘if something is false, skip and go to the next one.’ It’s very easy to quickly return false for the intersection test and that is the majority expectation for most tests.
+
+Common (visual) operations for each display include indicating the specific circles that contain the test point at each simulation step. Previous visual indications from a prior simulation step must be reset to default display at the next time step. Beyond that, the Canvas display shows the quadrants and highlights the current quadrant in which the test point lies. The SVG display only shows the circles and test point.
+
+It’s only necessary to understand the algorithms employed in both simulations at a very high level. In fact, the only reason to dive deeper into their implementation is if you want to improve the point-circle intersection algorithm further.
+
+Application Deconstruction
+
+Let’s look at each of the application requirements, and then discuss how they are all integrated together. We need
+
+1 — Two components to implement each algorithm and each set of display requirements for a single simulation. Commonality among these components should be specified in an Interface.
+
+2 — Lazy-load only one of the components based on some runtime criteria (an injected algorithm ID, for example).
+
+3 — Create a means to provide inputs and handle component outputs.
+
+4 — Run the simulation, i.e. advance one step at regular time intervals.
+
+For demonstration purposes, the main app component, /src/app/app.component.ts, serves as the smart component that lazy-loads one of the two point-in-circle simulation components. The main app module allows specification of an algorithm ID (1 for the first algorithm and Canvas render, 2 for the second algorithm and SVG render).
+
+import { BrowserModule } from '@angular/platform-browser';
+
+import { NgModule } from '@angular/core';
+
+
+
+import { AppComponent } from './app.component';
+
+import { CircleService } from './shared/services/circle-service';
+
+
+
+// Injectable constants
+
+import { ALGORITHM_ID } from './tokens';
+
+
+
+@NgModule({
+
+declarations: [
+
+AppComponent,
+
+],
+
+imports: [
+
+BrowserModule
+
+],
+
+providers: [
+
+CircleService,
+
+{ provide: ALGORITHM_ID, useValue: 1 },
+
+],
+
+bootstrap: [AppComponent]
+
+})
+
+export class AppModule { }
+
+This ID is injected into the main app component and then used to select the run-time strategy for the point-in-circles simulation. Change the value from 1 to 2 in order to lazy-load a different simulation component.
+
+The two point-in-circle simulation components are
+
+Algorithm 1 (Canvas): /src/app/components/point-in-circle-1/pic-1.component.ts
+
+Algorithm 2 (SVG): /src/app/components/point-in-circle-2/pic-2.component.ts
+
+Since everything is driven by the main app component, let’s look at that one in detail.
+
+Main App Component
+
+This component, in /src/app/app.component.ts is the smart component that lazy-loads one of two presentational components based on an algorithm ID. Although the algorithms and the display employed by each of these presentational components is different, as far as the rest of the application is concerned, they have a common set of inputs, outputs, and an exposed API. These are defined in the Interface in /src/app/shared/interfaces/pic-component.ts,
+
+import { OnChanges } from '@angular/core';
+
+import { Subject } from 'rxjs';
+
+
+
+export interface IPointInCircle extends OnChanges
+
+{
+
+intersect$: Subject<string>;
+
+
+
+next: () => void;
+
+
+
+step: number;
+
+}
+
+The simulation step (controlled by the smart component) is an Input to the point-in-circle component. This component is not statically defined in a template (there is no known binding to that Input), so Angular does not know to call the ngOnChanges lifecycle method. As a result, the smart component must do this manually. So, each lazy-loaded component must implement the OnChanges interface. Each of these components must also provide a next() method in order to advance the simulation one step.
+
+While there are several approaches to wiring up component outputs, I personally prefer a reactive approach. Each of the lazy-loaded components must expose a Subject<string> to indicate that the point intersected a circle with a particular id. The smart component that lazy-loads one of the two point-in-circle components simply subscribes to intersect$.
+
+This interface is the only knowledge the smart component has about the two lazy-loaded presentational components.
+
+Typical practice for lazy-loaded components is to place them into an ng-container, and this is the case for the main view in this application, /src/app/app.component.html,
+
+<p>Algorithm ({{algorithm}} Render into: {{render}})</p>
+
+<p>Total intersections: {{intersections}}</p>
+
+
+
+<ng-container #picContainer></ng-container>
+
+The template variable is used to assign a ViewChild in /src/app/app.component.ts,
+
+@ViewChild('picContainer', {static: true, read: ViewContainerRef})
+
+private picContainer: ViewContainerRef;
+
+The main app component receives the algorithm ID and all other classes necessary for lazy-loading through injection,
+
+constructor(@Inject(ALGORITHM_ID) public algorithm: number,
+
+private _compFactoryResolver: ComponentFactoryResolver,
+
+private _injector: Injector)
+
+{
+
+this.render = RenderTargetEnum.CANVAS;
+
+
+
+this.ComponentInstance = null;
+
+
+
+this._duration = 1000;
+
+this._delta = 500;
+
+this._currentStep = 0;
+
+this.intersections = 0;
+
+}
+
+The render variable indicates whether the rendered output is Canvas or SVG. The ComponentInstance variable is a ComponentRef<IPointInCircle>. The instance property of that variable allows direct calls to the presentational component after lazy-loading.
+
+A duration of 1000 time steps at increments of 500 msec is set in the constructor along with the current step number of zero and a total intersection count of zero.
+
+On initialization, the component begins the simulation via a call to the private __initSimulation() method, whose relevant code is shown below.
+
+You could place this code in the then clause of a Promise, but I personally prefer asyc/await (although beware there is a known problem with this if your target is ES2017). Component lazy-loading is shown below,
+
+Following is the relevant block of code for lazy-loading the component associated with algorithm #1,
+
+const {Pic1Component} = await import('./components/point-in-circle-1/pic-1.component'); factory = this._compFactoryResolver.resolveComponentFactory(Pic1Component); this.ComponentInstance = this.picContainer.createComponent(factory, null, this._injector);
+
+It is very important to place the precise path of the lazy-loaded component as a string literal inside the import. For example,
+
+const url: string = './components/point-in-circle-1/pic-1.component'; .
+
+.
+
+. const {Pic1Component} = await import(url);
+
+compiles with a warning, and the application will not run.
+
+The destructuring assignment must reference an exported Object from the referenced file, in this case, Pic1Component.
+
+Once a point-in-circle simulation component is lazy-loaded, the following blocks of code in __initSimulation() handle outputs, inputs, and the actual simulation,
+
+this.ComponentInstance.instance.intersect$.subscribe( (id: string) => this.__updateIntersection(id) );
+
+This subscribes to the output from the simulation component and executes a handler every time the simulation detects a point-circle intersection.
+
+The simulation is run within an RxJs timer.
+
+timer(100, this._delta)
+
+.pipe(
+
+map( (msec: number): void => {
+
+this._currentStep++;
+
+
+
+if (this._currentStep > this._duration) {
+
+this.destroy$.next();
+
+this.destroy$.complete();
+
+}
+
+}),
+
+takeUntil(this.destroy$)
+
+)
+
+.subscribe( () => {
+
+this.ComponentInstance.instance.ngOnChanges({
+
+step: new SimpleChange(this._currentStep-1, this._currentStep, this._currentStep === 1)
+
+});
+
+
+
+// run the next simulation step
+
+this.ComponentInstance.instance.next();
+
+});
+
+The variable destroy$ is a local Subject that is used to indicate the end of simulation. This happens when the duration limit is reached or if the component is destroyed.
+
+The parent (smart) component controls the step count of the simulation as it may later be desired to run a simulation forward or backward. The presentational (simulation) component accepts this step as an Input and reflects it in its own UI.
+
+The simulation (lazy-loaded) component Input is accepted and processed through that component’s ngOnChanges() method. That handler is called each time step with a new SimpleChange object. Note that the call is made on the component reference’s instance property.
+
+this.ComponentInstance.instance.ngOnChanges({
+
+step: new SimpleChange(this._currentStep-1, this._currentStep, this._currentStep === 1)
+
+and then, each iteration of the timer executes the next simulation step,
+
+this.ComponentInstance.instance.next();
+
+That concludes the deconstruction of the smart component that lazy-loads one of the point-in-circle simulation (or presentational) components. The simulation components are largely like any other Angular presentational component, but with one important exception. We’ll look at that next by deconstructing the Canvas-rendered component.
+
+Lazy-Loaded Component Structure
+
+The lazy-loaded simulation component for the first algorithm looks largely like any other component. This is the template,
+
+/src/app/components/point-in-circle-1/pic-1.component.html
+
+<div pic-canvas
+
+class=""circlesContainer""
+
+[strokeWidth]=""1""
+
+[strokeColor]=""'0x0000ff'""
+
+[gridColor]=""'0xff0000'""
+
+(onIntersect)=""onIntersection($event)"">
+
+</div>
+
+<p>Simulation Step: {{step}}</p>
+
+An attribute directive is used to delegate Canvas creation (via PIXI.js), computations, and rendering. In addition to defining class properties necessary to fulfill the IPointInCircle interface, a ViewChild is defined for the attribute directive,
+
+export class Pic1Component implements IPointInCircle, OnChanges
+
+{
+
+public intersect$: Subject<string>;
+
+
+
+@Input()
+
+public step: number;
+
+
+
+@ViewChild(PicCanvasDirective, {static: true})
+
+protected _picContainer: PicCanvasDirective;
+
+
+
+constructor()
+
+{
+
+this.intersect$ = new Subject<string>();
+
+}
+
+.
+
+.
+
+.
+
+The next two methods complete the IPointInCircle interface contract,
+
+public ngOnChanges(changes: SimpleChanges): void
+
+{
+
+let prop: string;
+
+let change: SimpleChange;
+
+
+
+for (prop in changes)
+
+{
+
+change = changes[prop];
+
+
+
+if (prop === 'step')
+
+{
+
+this.step = +change.currentValue;
+
+}
+
+}
+
+}
+
+
+
+public next(): void
+
+{
+
+if (this._picContainer) {
+
+this._picContainer.next();
+
+}
+
+}
+
+Note that this is the next() method that is called from the RxJs timer subscription after Pic1Component is lazy-loaded.
+
+Note that Pic1Component has an important dependency, the PicCanvasDirective. While Pic1Component may exist outside any NgModule in the application, the directive still needs to be tied to the component of which it is a ViewChild via a module definition. The cleanest way to do this and ensure that the directive is only loaded when Pic1Component is loaded is to use a local (non-exported) module,
+
+@NgModule({
+
+imports: [CommonModule],
+
+declarations: [
+
+Pic1Component,
+
+PicCanvasDirective
+
+]
+
+})
+
+class PicCanvasModule {}
+
+You will see a similar module in /src/app/components/point-in-circle-2/pic-2.component.ts for the second simulation component.
+
+Note that Pic1Component (and Pic2Component, for that matter) have another dependency, the injected CircleService. This service currently contains read-only variables, but is not listed as a provider in the above NgModule, nor has an injector been configured for it. In this application, the lazy-loaded component is loaded into the application root, so we are using the root injector. Note that a provider for this service is contained in /src/app/app.module.ts. It is often the case that either the root or a route-level injector can be used for such purposes. Other tutorials on the mechanics of lazy-loading components describe how to configure an injector just for services used by a lazy-loaded component.
+
+This is all the structure that is necessary to dynamically load and instantiate a complete simulation for the problem at hand using only an algorithm id to differentiate between the two simulations.
+
+The final section is optional and deconstructs the PicCanvasDirective. It is not necessary to understand the details of this directive in order to build your own application with lazy-loaded components. So, free free to quit reading here :)
+
+Inside A Simulation
+
+The reference file for this deconstruction is /src/app/shared/libs/render/canvas-render/pic-canvas.directive.ts
+
+This is an attribute directive that creates a PIXI.js-generated Canvas inside some DOM container (typically a DIV). The directive employs a number of computational helper functions, as can be seen in the imports,
+
+import { TSMT$Circle } from '../../circle';
+
+
+
+import { CircleService } from '../../../services/circle-service';
+
+
+
+import { canvasRenderCircle } from '../render-circle-canvas';
+
+import { pointRandomWalk } from '../../point-random-walk';
+
+import { TSMT$PointInCircle } from '../../circle-util-functions';
+
+import { TSMT$getQuadrant } from '../../geom-util-functions';
+
+import { RandomIntInRange } from '../../random/RandomIntInRange';
+
+
+
+@Directive({
+
+selector: '[pic-canvas]'
+
+})
+
+export class PicCanvasDirective implements OnInit, OnChanges
+
+.
+
+.
+
+.
+
+TSMT$Circle is the Typescript Math Toolkit (a private library for which I have open-sourced some of the contents) basic circle class. This class is optimized for a quad-map as it automatically updates the quadrant location of a circle every time its coordinates are mutated (provided that bounds are set in advance). The class also handles the case where a circle may lie in more than one quadrant.
+
+Quadrants in which circles are located are referenced by four Typescript Record structures,
+
+protected _quad1: Record<string, boolean>;
+
+protected _quad2: Record<string, boolean>;
+
+protected _quad3: Record<string, boolean>;
+
+protected _quad4: Record<string, boolean>;
+
+Relevant information about the DOM container for the Canvas (specifically width and height) is available in the ngOnInit() handler, which is where most of the PIXI.js initialization is performed. The initial set of circles are also drawn at that time in the __initCircles() method.
+
+There are four class variables that store circle-related information. The first is _circleRefs, an array that stores are reference to each TSMT$Circle in the simulation. Every circle has a visual representation, a graphics context or display object in PIXI.js, which is stored in another array, _circleDO.
+
+When a circle is identified as containing the test point during a simulation step, the circle reference is placed into the _indentified array and its corresponding graphics context into the _identifiedDO array.
+
+Here is the code for the circle initialization, which is responsible for placing circles throughout the simulation area. PIXI.js drawing has been covered in a number of my past articles and will not be discussed in the current deconstruction.
+
+The most important code (for this algorithm) occurs after placing the circles ‘randomly’ inside the display area.
+
+c.setBounds(0, 0, this._width, this._height);
+
+
+
+if (c.inQuadrant(1)) {
+
+this._quad1[c.id] = true;
+
+}
+
+
+
+if (c.inQuadrant(2)) {
+
+this._quad2[c.id] = true;
+
+}
+
+
+
+if (c.inQuadrant(3)) {
+
+this._quad3[c.id] = true;
+
+}
+
+
+
+if (c.inQuadrant(4)) {
+
+this._quad4[c.id] = true;
+
+}
+
+Each circle instance contains internal bounds that may be set by the caller. Bound setting and each subsequent coordinate mutation alters the quadrant in which the circle lies. That quadrant may be queried and is used to set the primitive quad-map (currently four separate Records in Pic1Directive).
+
+Most of the simulation work is performed in the next() method that advances the simulation one step.
+
+It seems like a long method, but it performs a relatively simple number of steps. First, the _indentified array is used to redraw any circles identified as containing the point in the prior simulation step with their default visual properties.
+
+The random walk for the point is executed and the coordinates updated in a destructuring assignment,
+
+[this._px, this._py] = pointRandomWalk(this._px, this._py, CircleService.LOW_RADIUS, CircleService.HIGH_RADIUS);
+
+The current quadrant occupied by the point (stored in the _curQuad class variable) is updated with a utility method,
+
+this._curQuad = TSMT$getQuadrant(this._px, this._py, 0, 0, this._width, this._height);
+
+The current quadrant is checked vs the prior quadrant from the previous simulation step. If the quadrant number changes, then it is necessary to adjust the subset of circles that are checked for point-circle intersection. For example, if the current quadrant is one and the prior quadrant is one, then the check is made against keys in the local _quad1 Record. This variable might be unchanged for several simulation steps. If it changes to three, for example, tests for point-circle intersection should to be made against keys in the local _quad3 Record. This is handled by the block of code,
+
+if (this._curQuad != this._prevQuad)
+
+{
+
+this._prevQuad = this._curQuad;
+
+this._check = Object.keys(this[`_quad${this._curQuad}`]);
+
+}
+
+The statement,
+
+this[`_quad${this._curQuad}`]
+
+creates a reference to one of the local class variables (Records), _quad1, _quad2, _quad3, or _quad4, depending on the current quadrant number. A forEach function runs the point-circle intersection test against only the circles that lie in the current quadrant,
+
+this._check.forEach( (id: string): void =>
+
+{
+
+circ = this._circleRefs[+id];
+
+g = this._circleDO[+id];
+
+
+
+if (TSMT$PointInCircle(this._px, this._py, circ.x, circ.y, circ.radius))
+
+{
+
+this._identified.push(circ);
+
+this._identifiedDO.push(g);
+
+
+
+g.clear();
+
+g.lineStyle(this.strokeWidth, '0xff0000');
+
+g.drawCircle(circ.x, circ.y, circ.radius);
+
+
+
+this.onIntersect.emit(id);
+
+}
+
+Note that an Angular EventEmitter is used for the directive to convey an intersection to a containing component (Pic1Component). That component in turn executes the next() method of an RxJs Subject, which is subscribed to in the main app component (the primary smart component in this application).
+
+Here is a screenshot from one time step of the Canvas-rendered simulation,
+
+Note that the quadrant currently containing the test point is highlighted in green. Run the application and change the algorithm id to 2 to see how the SVG simulation display differs.
+
+Summary
+
+This was a long article, but I hope it illustrates how lazy-loaded components can be applied in an actual application. In this hypothetical situation, two different simulations with different algorithms, dependencies, and output are differentiated by an algorithm id. A run-time decision is made as to which simulation to execute. The simulation component and its dependencies are lazy-loaded.
+
+This is in contrast to an alternate scenario where a simulation with identical dependencies and visual display is differentiated by algorithm only. This situation can be handled by a lazy-loaded a computational library instead of a component.
+
+Good luck with your Angular efforts!
+
+EnterpriseNG is coming
+
+EnterpriseNG is a two-day conference from the ng-conf folks coming on November 19th and 20th. Check it out at ng-conf.org",https://medium.com/ngconf/implementing-the-strategy-pattern-using-lazy-loaded-components-in-angular-version-9-38efceb1f49f,['Jim Armstrong'],2020-09-30 19:45:07.730000+00:00,"['Math', 'Typescript', 'Angular 9']"
+Making C# More Welcoming,"This article is part of the C# Advent Series check it out for more articles from others in the community
+
+I love C#. I’ve been working with the language since 2001 and still view C# as my favorite and primary programming language, despite growing to love many other languages as well since then. However, this year has been eye-opening for me as I’ve gotten a glimpse into how others learn programming and the problems C# has with new developers.
+
+This year I left software engineering and became an instructor at Tech Elevator, a full-stack C# and Java bootcamp. I am now responsible for teaching others programming via teaching them C#, SQL, and JavaScript among other technologies.
+
+Learning programming is hard, but learning a language that was introduced 20 years ago and continues to radically grow and change year after year is monumentally harder.
+
+In this article I’ll lay out some of the current problems I see with C# for new developers and talk about my hopes for the future of the language, including some early information on changes Microsoft is looking at including with .NET 6 and a feature request I’m hoping Microsoft will implement in Visual Studio.
+
+It is my hope that this article helps others empathize more with new developers and take new developers into account when designing their own libraries, languages, and tooling. I would also love it if Microsoft entertained some of the suggestions in this article, but my primary desire is for the community to have a bit more empathy for new developers learning in a broad and deep ecosystem.
+
+Panic! In the IDE
+
+While it’s normal for experienced developers to feel waves of impostor syndrome throughout their career, it can be harder to remember that feeling of being a brand new developer writing your first few pieces of code.
+
+As a beginner, your primary focus is on learning the syntax and learning to think like a machine, but there are so many ways things can fail and a vast array of things you’ve not even encountered yet.
+
+“Not All Code Paths Return a Value”
+
+The “Not All Code Paths Return a Value” compiler error in C# is one that almost all of our students run into as they start making their first methods and playing with conditional logic.
+
+Let’s say you need to write a method to return a string based on whether the number is above, below, or inside of a specified number range. A seasoned programmer would have no problem with this, but new programmers often try an approach that looks something like this:
+
+The core logic here is correct: We have 3 good checks for things that have appropriate boundary conditions and return the right result, but the compiler isn’t happy:
+
+A beginning programmer looks at this CS0161 identifier and it scares them because it’s an alien string from a computer. They see “not all code paths return a value” and think “Did I miss a return statement inside my if statements? Is there an edge case I forgot?” and they’ll validate that any number going into the method should meet one of those 3 scenarios. They think about the logic and not necessarily about the compiler’s perspective.
+
+Beginner programmers like repetition. They like thinking about things in terms of if statements and they’ll repeat the same types of condition checks with slight edits. It’s very normal for people to do things like this as they get used to programming. Only later do they think “I don’t need an if here if I’m returning on the prior lines for the other conditions” because it takes time to become truly familiar with the return statement and its implications.
+
+I have a fix in mind for this error in particular which I’ll get to in a bit.
+
+Unassigned Local Variables
+
+Just to illustrate that I’m not just picking a random bad compiler error, let’s take a look at another case folks are likely to try at some point:
+
+Here the programmer forgot to assign favoriteNumbers a new list of integers. Most programmers, when confronted with these two lines in close proximity, will spot this issue and be able to correct it. The problem is that these are often less clear with longer methods, additional variables, loops, if statements, etc.
+
+So let’s take a look at the error message Visual Studio offers. The message once again tells us what’s wrong, but most experienced developers forget that reading error messages is an acquired skill. To the novice “unassigned” might not make them think “I need to create a new list and set that list into my variable”.
+
+This has all the right words, but it could be clearer with one more sentence asking if they meant to set the variable to a value when declaring it.
+
+Two Decades of Language Features
+
+Let’s shift gears a bit to talk about how C# and .NET is awesome. As I mentioned in the opening, I’ve been working with C# since beta 2 back in 2001. You don’t stick with a language that doesn’t adapt and change over time.
+
+.NET has made some phenomenal changes over the past two decades with the major new platforms such as Razor, .NET Core, MVC, WPF, LINQ, Entity Framework, and Microsoft Azure, among other things. As technology continues to change, .NET remains relevant entirely through these efforts.
+
+However, with two decades of progress and history, there is a price to pay, and unfortunately it is the new developers who bear the brunt of it.
+
+Options Overload
+
+As C# has grown over the years, it’s gained a number of incremental improvements in new language features. As new capabilities and keywords get added on, older ways of doing things remain supported to provide easy migration paths. This means that newcomers in tech are likely to see things a number of different ways in looking over existing code and documentation.
+
+This problem is perhaps at its most prevalent with properties. Let’s take a look at all of the different ways of handling properties in C#.
+
+Here we have all the currently supported ways of working with C# properties in one class. As you can see, there’s a lot of valid, but different syntax. Some of these pieces of syntax are matters of preference ( expression-bodied members), and some are necessary to support certain scenarios.
+
+A novice programmer needs to be familiar with reading and understanding most of these. Visual Studio will actually automatically insert properties as expression-bodied members when overriding a class, which forces that arrow syntax on new devs who may not be ready for it yet.
+
+Guiding People Towards Cliffs
+
+C# has a growing number of keywords — particularly when dealing with method parameters and with the concept of a class vs a struct vs an interface vs a tuple vs a record vs an anonymous object.
+
+There’s simply a lot of things that a newcomer needs to be able to read and understand in online help, starter templates, articles, books, and existing code. Not only does a newcomer need to understand how to read these things, but they must internalize guidelines and rules on when to use what type of thing as part of the process of understanding each new thing they know.
+
+Unfortunately, the tooling makes it easy to discover some of the newer and more advanced language features when you don’t necessarily want people to.
+
+Take this error message our students might encounter when running on a slightly older version of C# and working with interfaces for the first time:
+
+Here the student has tried to define an interface containing a method body out of habit. The compiler message (pictured above) is more encouraging towards upgrading C# versions to take advantage of default interface method implementations as opposed to pushing them to double check if they wanted to add a method body to an interface to begin with.
+
+Note: Interestingly, newer versions of C# don’t error on this code at all, making it harder for a student to understand the difference between an abstract class and an interface and what the intent of either one really is.
+
+This is an example of a new language feature making it harder for newcomers to learn core aspects of the language first, which is unfortunately a common trend.
+
+Making C# More Accessible
+
+At this point hopefully you have a slightly larger understanding of some of the things that concern me about people learning C# 2 decades into its existence.
+
+Let’s talk more about remedies for these things.
+
+Here are a few things that I think would help people have an easier time getting into C# and feeling confident and competent with the language:
+
+Beginner-Friendly Compiler Errors
+
+The number one thing I would encourage Microsoft to change would be the way that compiler errors appear to the user when the user hovers over the “red squiggly” in the interface.
+
+Let’s take a look of a simple mock-up of what might appear with the “Not all code paths return a value” error I cited earlier as an example:
+
+Here we have a few changes:
+
+First, the “red squiggly” occurs at the end of the method instead of at the method title. This helps the developer with this particular error by putting the squiggly closer to the spot of the missing / incorrect code.
+
+Secondly, the error tooltip is vastly different and includes basic contextual information up at the top, a short beginner-friendly paragraph describing the main cases of the error, and includes examples of bad and fixed code.
+
+Finally, the error code is still included at the footer, along with a hyperlink to learn more details from the official documentation on this error code.
+
+This type of experience would be optimal for a new developer and would take a certain degree of fear out of the experience while steering them in the direction of a proper fix.
+
+Note: This feature has been officially registered as a feature request. If you believe that this provides value, please upvote it.
+
+These tooltips would be hard to do with many errors, but I’m certain Microsoft has some idea of which compiler errors are the most common errors and could prioritize providing help for those scenarios. Here are a few I’d prioritize myself:
+
+CS0029 — Cannot implicitly convert X to Y
+
+CS0103 — X does not exist in the current context
+
+CS0161 — Not all code paths return a value
+
+CS0165 — Use of unassigned local variable
+
+CS1002 — Semicolon expected
+
+CS1513 — } expected (missing closing scope)
+
+CS1525 — Invalid expression term. Specifically when using == instead of = for assignment (e.g. int i == 4)
+
+CS7036 — No argument given that corresponds to the required formal parameter (incorrect method call)
+
+Opt-In to Advanced Language Features
+
+It’s healthy and expected to add more language features to support developer productivity and keep up with the changing nature of programming. The recent rise in popularity of functional programming is a great example of this as it has pulled in a lot more functional-style syntax into newer versions of the C# language.
+
+The problem comes when more complex language features are pushed to new developers still trying to learn the basics.
+
+For example, when a new developer is trying to implement an interface for the first time, C# will helpfully offer to generate members for the user. That’s an awesome feature. However, the implementation is maybe not the best for new users:
+
+Here C# generates a property getter and setter, but prefers the expression-bodied member syntax of the language.
+
+This is actually my preferred syntax for writing a simple property, but this is distracting to show someone brand new to C# and programming in general because there are so many other fundamentals to focus on first before you get to the point where you can learn arrow functions.
+
+One of the most surprising things for me as a new instructor was seeing how much trouble new developers have understanding properties. New programmers are juggling so many different concepts and this idea of a class as a re-usable piece of code with little properties that can be customized takes time to soak in. During this “soaking” period, properties don’t make a lot of sense and, unfortunately, there are far too many ways of writing them at present.
+
+What’s worse, when Visual Studio pushes expression-bodied member properties at a new developer who has only seen the older ways of writing a property (and has potentially not yet seen arrow functions), the beginner may not even realize that they’re looking at a property.
+
+Beginner Mode
+
+I think what we need is a “Beginner Mode” that simplifies the language of error messages and sets the auto-generated code to prefer older style syntax.
+
+Just like how when you used to set up Visual Studio you would tell it if you had a C#, VB.NET, or Web Development background and it would customize its menus, it’d be nice to indicate that you’re new to programming or new to C# and have Visual Studio minimize the number of things that could distract you from that early learning path.
+
+To be fair to the wonderful team at Microsoft here, there’s definitely new features coming out that you now must opt-in to receive. A notable recent example would be the way C# 8 adjusts how null values are handled by requiring a project-level setting enabled to enable that advanced behavior.
+
+More features need to be handled in similar ways going forward.
+
+Deprecate and Remove Old Syntax
+
+We need to seriously think about the growing baggage in terms of number of different keywords and different ways those keywords can be arranged. When we introduce new things, we need to seriously ask ourselves what, if anything, we can take out or deprecate from older versions of the language.
+
+For example, if expression-bodied members are truly designed to replace standard field-based properties with gets and sets, we should say that you should stop using the older way of doing things and provide compiler warnings to guide people away from them. (Note, I’m not saying this change should be made, I’m just using it as an example of adding complexity without removing anything)
+
+Even better, we should provide handy quick-fixes that automatically convert old code to use the new recommended ways of doing things, and let you do that at the file, project, or solution level.
+
+By making explicit best practices clear in our tooling, we remove things that new developers need to care about. Sure they need to care about understanding the old and new way, but they don’t need to worry about deciding when they should use one way over another.
+
+Beginners like and need guide rails because they reduce mental strain and improve comfort as people learn the ropes by focusing on one thing at a time.
+
+What’s Ahead in .NET 6?
+
+The good news is that making .NET Accessible to new developers is a central theme currently under consideration for the .NET 6 release.
+
+Looking into the current theme, it looks like Microsoft is aiming for the following improvements:
+
+Overall, I’m elated at this, but I’d still love to see more progress on improving the compiler and runtime errors users see and gearing them towards those brand new to programming.
+
+I strongly support and embrace Microsoft’s approach in prioritizing new developers coming into the language as the language and its tooling continue to grow and evolve and I’d love to see some additional effort on simplifying legacy ways of writing C# code or guiding people towards more modern approaches in a way that’s as friendly as possible to new developers while respectful of existing code.
+
+Closing
+
+This article may read like a wish list or an airing of grievances about things that make my job harder as an instructor, but it’s actually not my students I’m worried about. A skilled instructor can serve as a tour guide through an existing language.
+
+My fear is for the folks who want to learn C# in greater depth than their schools teach it, or who are trying to improve themselves on the side. My fear is also that students may struggle and give up due to the daunting learning curve early on when they could have succeeded if they’d had a bit more help.
+
+We need a wider diversity of people coming into tech, and the learning curve is one of the many factors stifling that growth. More people should have a fair shot at learning these technologies, and that means revisiting our tools and documentation to welcome the next generation of developers from all ages, genders, and backgrounds.
+
+I am incredibly proud of .NET and all of its supported languages and associated tools. Microsoft has done a phenomenal job over the past 20 years and I cannot overstate that, despite the improvements I want to see.",https://medium.com/swlh/making-c-more-welcoming-4c5a76a7497e,['Matt Eland'],2020-12-13 06:55:09.151000+00:00,"['Visual Studio', 'Csharp', 'Dotnet', 'Learn To Code', 'Programming']"
