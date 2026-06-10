@@ -54,7 +54,8 @@ def ensure_index():
     return pc.Index(PINECONE_INDEX_NAME)
 
 def main():
-    csv_path = "/Users/maayanmor/Desktop/קורסים תואר שני טכניון/מערכות סוכני בינה מלאכותית/individual_assignment/data/medium-english-50mb-small.csv"
+    #csv_path = "/Users/maayanmor/Desktop/קורסים תואר שני טכניון/מערכות סוכני בינה מלאכותית/individual_assignment/data/medium-english-50mb-small.csv"
+    csv_path = "/Users/maayanmor/Desktop/קורסים תואר שני טכניון/מערכות סוכני בינה מלאכותית/individual_assignment/data/medium-english-50mb.csv"
 
     print("Loading CSV...")
     docs = build_docs_from_csv(csv_path)
