@@ -1,14 +1,24 @@
 # Medium Article RAG Assistant
 
-A production-style Retrieval-Augmented Generation (**RAG**) system for querying a Medium articles dataset using **LangChain**, **OpenAI embeddings**, **Pinecone**, **FastAPI**, and **Vercel**.
+A Retrieval-Augmented Generation (**RAG**) system for querying a Medium articles dataset using **LangChain**, **OpenAI embeddings**, **Pinecone**, **FastAPI**, and **Vercel**.
 
 The assistant answers questions **strictly from the provided article corpus** and returns transparent retrieval evidence, including the retrieved context and the augmented prompt sent to the chat model.
 
 ---
 
+## Live endpoints
+
+> [`/api/prompt`](https://medium-article-rag-assistant-hazel.vercel.app/api/prompt)  
+> [`/api/stats`](https://medium-article-rag-assistant-hazel.vercel.app/api/stats)  
+
+Or alternatively: 
+> [`/docs`](https://medium-article-rag-assistant-hazel.vercel.app/docs)
+
+---
+
 ## Overview
 
-This project was built to support question answering over a structured Medium dataset stored in CSV format.
+This project was built to support question answering over a structured Medium dataset (stored in CSV format).
 
 Each article record includes:
 
@@ -35,7 +45,6 @@ The system follows a closed-domain RAG design:
 
 - Answer **only** from the Medium dataset context.
 - Avoid external knowledge and internet-based answering.
-- Support transparent debugging and evaluation.
 - Keep the system modular and easy to extend.
 - Enable efficient experimentation with chunking and retrieval hyperparameters.
 - Provide a public deployable API.
@@ -87,64 +96,13 @@ Vercel Deployment
 
 ---
 
-## Repository structure
-
-```text
-your-repo/
-├── medium_rag/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── ingest.py
-│   ├── rag_chain.py
-│   └── query.py
-├── data/
-│   └── medium_articles_small.csv
-├── api/
-│   └── index.py
-├── .env
-├── .gitignore
-├── requirements.txt
-├── runtime.txt
-└── vercel.json
-```
-
----
-
-## Development approach
-
-The project was developed in stages to reduce cost and improve reliability.
-
-### 1. Local-first validation
-
-The full RAG pipeline was implemented and tested locally before deployment:
-
-- dataset loading
-- chunking
-- embedding generation
-- Pinecone indexing
-- retrieval
-- grounded answer generation
-
-This made debugging significantly easier before introducing API and deployment complexity.
-
-### 2. Small-subset experimentation
-
-Instead of embedding the entire corpus immediately, the system was first tested on a small subset of articles.
-
-Benefits:
-
-- faster debugging
-- lower API cost
-- easier iteration on chunking parameters
-- simpler verification of end-to-end correctness
-
-### 3. Reusable namespace strategy
+### Reusable namespace strategy
 
 Different chunking configurations can be stored in different Pinecone namespaces, for example:
 
-- `tok400_ov50`
-- `tok800_ov100`
-- `tok1200_ov150`
+- `chunk_size_tokens512_overlap51`
+- `chunk_size_tokens512_overlap102`
+- `chunk_size_tokens300_overlap50`
 
 This avoids re-embedding the full corpus every time retrieval settings are adjusted.
 
@@ -154,46 +112,17 @@ This avoids re-embedding the full corpus every time retrieval settings are adjus
 
 The system focuses on three main RAG hyperparameters:
 
-| Parameter | Meaning |
-|-----------|---------|
-| `chunk_size` | Size of each text chunk in tokens |
-| `chunk_overlap` | Token overlap between neighboring chunks |
-| `top_k` | Number of retrieved chunks passed into the answering step |
+| Parameter | Meaning | Default for this project |
+|-----------|---------|--------------------------|
+| `chunk_size` | Size of each text chunk in tokens | 512 |
+| `chunk_overlap` | Token overlap between neighboring chunks | 102 (20%) |
+| `top_k` | Number of retrieved chunks passed into the answering step | 12 |
 
 These values are centralized in `medium_rag/config.py` so that both ingestion and the live API stay synchronized.
 
-### Why this matters
-
-Keeping the parameters in one place ensures that:
-
-- the ingestion namespace matches the configured chunking scheme
-- the deployed `/api/stats` endpoint always reflects the current setup
-- experiments are reproducible
-- parameter changes do not silently break the system
-
 ---
 
-## Batching and efficiency
-
-The ingestion flow distinguishes between two separate ideas:
-
-### 1. Chunk size
-
-This controls how article text is split for retrieval.
-
-### 2. Embedding batch size
-
-This controls how many chunks are sent to the embedding model in a single API call.
-
-These are **not** the same parameter.
-
-The project uses batching for embedding generation to improve ingestion speed and reduce the overhead of sending one request per chunk.
-
----
-
-## Supported question types
-
-The system was designed around four practical query categories:
+## Supported question types:
 
 ### 1. Precise fact retrieval
 Example:
@@ -218,7 +147,7 @@ Example:
 These query types helped shape the retrieval logic, especially the need for:
 
 - strong article-level precision
-- support for up to 3 distinct article sources
+- support (typically) for up to 3 distinct article sources
 - concise grounded summaries
 - evidence-based recommendations
 
@@ -270,11 +199,9 @@ Returns the currently active RAG configuration.
 {
   "chunk_size": 512,
   "overlap_ratio": 0.2,
-  "top_k": 7
+  "top_k": 12
 }
 ```
-
-This endpoint is especially useful for reproducibility and evaluation.
 
 ---
 
@@ -283,8 +210,8 @@ This endpoint is especially useful for reproducibility and evaluation.
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_REPO_URL>
-cd <YOUR_REPO_NAME>
+git clone https://github.com/MaayanMor555/Medium-Article-RAG-Assistant.git
+cd Medium-Article-RAG-Assistant
 ```
 
 ### 2. Create a virtual environment
@@ -319,7 +246,7 @@ PINECONE_INDEX_NAME=medium-rag-index
 Place a CSV file in `data/`, for example:
 
 ```text
-data/medium_articles_small.csv
+data/medium-english-50mb.csv
 ```
 
 ---
@@ -362,110 +289,11 @@ The API is deployed with **Vercel** using the Python runtime for FastAPI.
 - `runtime.txt`
 - `vercel.json`
 
-### Example `runtime.txt`
-
-```text
-3.11.9
-```
-
-### Example `vercel.json`
-
-```json
-{
-  "version": 2,
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.py"
-    }
-  ]
-}
-```
-
 ### Required environment variables on Vercel
 
 - `OPENAI_API_KEY`
 - `PINECONE_API_KEY`
 - `PINECONE_INDEX_NAME`
-
----
-
-## Important implementation notes
-
-### Grounding before generation
-
-The system is intentionally designed so that retrieval happens first and generation happens second. The language model does not answer freely; it answers only from retrieved context.
-
-### Transparent outputs
-
-The response returns:
-
-- the final answer
-- the retrieved supporting chunks
-- the full augmented prompt used for generation
-
-This makes the system easier to inspect, debug, and evaluate.
-
-### Configuration consistency
-
-A single configuration source is used so that ingestion parameters and deployment parameters remain aligned.
-
-### Local-first engineering
-
-Building locally before deployment reduced debugging friction and made the system easier to reason about.
-
----
-
-## Future improvements
-
-Possible next steps include:
-
-- article-level deduplication during retrieval
-- article reranking across multiple retrieved chunks
-- evaluation scripts for comparing chunking configurations
-- automated scoring for retrieval quality
-- support for larger corpus ingestion with stronger batching control
-- frontend UI for interactive question answering
-
----
-
-## Tech stack
-
-- **Python**
-- **LangChain**
-- **OpenAI API**
-- **text-embedding-3-small**
-- **gpt-5-mini**
-- **Pinecone**
-- **FastAPI**
-- **Vercel**
-- **Pandas**
-- **tiktoken**
-
----
-
-## Project highlights
-
-- Closed-domain RAG over a Medium dataset
-- Strict grounded-answering behavior
-- Token-based chunking
-- Configurable retrieval pipeline
-- Transparent API responses
-- Modular Python project structure
-- Local validation before cloud deployment
-- Public FastAPI deployment on Vercel
-
----
-
-## License
-
-Add your preferred license here, for example:
-
-```text
-MIT License
-```
-
----
 
 ## Acknowledgments
 
